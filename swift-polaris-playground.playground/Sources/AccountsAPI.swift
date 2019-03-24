@@ -21,28 +21,28 @@ public class AccountsAPI {
     
     // AccountFromKey attempts to derive an account from a given private key
     public func AccountFromKey(key: String) -> ([String: Any]?, Error?) {
-        let requestContents: [String: Any] = ["PrivatePublicKey": key] // Initialize request
+        let requestContents: [String: Any] = ["privatePublicKey": key] // Initialize request
         
         return Requests.MakeRequest(requestURI: "\(URI)/AccountFromKey", requestContents: requestContents) // Return response
     }
     
     // PublicKey attempts to derive an ECDSA public key from a given account.
     public func PublicKey(address: String) -> ([String: Any]?, Error?) {
-        let requestContents: [String: Any] = ["PrivatePublicKey": address] // Initialize request
+        let requestContents: [String: Any] = ["privatePublicKey": address] // Initialize request
         
         return Requests.MakeRequest(requestURI: "\(URI)/PublicKey", requestContents: requestContents) // Return response
     }
     
     // PublicKey attempts to derive an ECDSA private key from a given account.
     public func PrivateKey(address: String) -> ([String: Any]?, Error?) {
-        let requestContents: [String: Any] = ["PrivatePublicKey": address] // Initialize request
+        let requestContents: [String: Any] = ["privatePublicKey": address] // Initialize request
         
         return Requests.MakeRequest(requestURI: "\(URI)/PrivateKey", requestContents: requestContents) // Return response
     }
     
     // String marshals an account into a JSON-encoded string.
     public func String(address: String) -> ([String: Any]?, Error?) {
-        let requestContents: [String: Any] = ["PrivatePublicKey": address] // Initialize request
+        let requestContents: [String: Any] = ["privatePublicKey": address] // Initialize request
         
         return Requests.MakeRequest(requestURI: "\(URI)/String", requestContents: requestContents) // Return response
     }
