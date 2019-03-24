@@ -6,12 +6,12 @@
 */
 
 import Foundation
-import AppKit
+import Cocoa
 import PlaygroundSupport
 
 var api: API // Init API instance buffer
 
-if !API.Offline { // Check is offline
+if API.Offline { // Check is offline
     api = API(apiURI: "https://localhost:8000") // Initialize API instance
 } else {
     api = API(apiURI: "https://108.41.124.60:8000") // Initialize API instance
@@ -38,7 +38,8 @@ print("Created new account successfully! Here's your address: \(newAccountAddres
  Use api.Accounts.GetAllAccounts() to get a list of all the accounts created on the local node.
 */
 
-let baseView = NSView(frame: CGRect(x: 0, y: 0, width: 500, height: 500)) // Placeholder to present address
+let baseView = DemoView(frame: CGRect(x: 0, y: 0, width: 500, height: 500)) // Placeholder to present address
+baseView.Say(s: "test")
 
 PlaygroundPage.current.liveView = baseView // Set live view
 PlaygroundPage.current.needsIndefiniteExecution = true // Keep open
