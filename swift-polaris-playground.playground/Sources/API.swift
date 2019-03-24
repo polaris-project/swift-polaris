@@ -10,6 +10,6 @@ class API {
     init(apiURI: String) {
         URI = apiURI // Set URI
         
-        Accounts = AccountsAPI(apiURI) // Initialize accounts API
+        Accounts = AccountsAPI(apiURI: apiURI) // Initialize accounts API
     }
 }
