@@ -5,5 +5,7 @@
         <page name='Hello, World'/>
         <page name='Publishing Transactions'/>
         <page name='Exploring the Dag'/>
+        <page name='Genesis Block'/>
+        <page name='Genesis Address'/>
     </pages>
 </playground>
