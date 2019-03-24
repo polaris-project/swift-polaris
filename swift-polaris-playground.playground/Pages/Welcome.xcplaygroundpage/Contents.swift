@@ -21,8 +21,12 @@
  
  ## A Quick Note
  
- This Playground will need an internet connection, as it needs to connect to the Go-Polaris RPC JSON API. If one wishes to operate without an internet connection, replace each API(URI) call with API("https://127.0.0.1:8000"). Although, in order to connect to a locally running node API, one should also run an instance of Go-Polaris locally (i.e. `go install go-polaris` or `curl https://github.com/polaris-project/go-polaris/releases/download/v0.1.0/polaris-darwin
- 
+ This Playground works best with an internet connection, as it needs to connect to the Go-Polaris RPC JSON API. However, if one wishes to operate without an internet connection, simply run the run_polaris.sh (runs a local private offline Polaris network) file in Resources/ (`chmod +x Resources/run_polaris.sh && Resources/run_polaris.sh`). Furthermore, to use an offline connection, set the following variable to true.
+*/
+
+API.Offline = false // Set to true for offline capability
+
+/*:
  ## Getting Started
  
  To create your first account on the Polaris network, see [Hello, World](Hello,%20World).

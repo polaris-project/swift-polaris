@@ -9,7 +9,13 @@ import Foundation
 import AppKit
 import PlaygroundSupport
 
-let api = API(apiURI: "https://108.41.124.60:8000") // Initialize API instance
+var api: API // Init API instance buffer
+
+if !API.Offline { // Check is offline
+    api = API(apiURI: "https://localhost:8000") // Initialize API instance
+} else {
+    api = API(apiURI: "https://108.41.124.60:8000") // Initialize API instance
+}
 
 /*:
  ## The Accounts API

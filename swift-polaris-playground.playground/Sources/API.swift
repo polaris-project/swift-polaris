@@ -2,6 +2,8 @@ import Foundation
 
 // Class API defines the swift-polaris API.
 public class API {
+    public static var Offline: Bool = false // Init offline buffer
+
     var URI: String // API lookup path
     
     public var Accounts: AccountsAPI // Accounts API instance
