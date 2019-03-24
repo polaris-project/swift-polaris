@@ -10,6 +10,11 @@ import PlaygroundSupport
 
 var api: API // Init API instance buffer
 
+/*:
+ * Important:
+ - Remember to set API.Offline to enable offline capability. If the assistant view shows a loading indicator, set API.Offline = true.
+ - If one wishes for offline capability, make sure a local polaris node is running (chmod +x Resources/run_polaris.sh && Resources/run_polaris.sh)
+ */
 API.Offline = API.Offline // Just a reminder to set to true for offline capability (make sure to run run_polaris.sh [node needs to be up!])
 
 if API.Offline { // Check is offline

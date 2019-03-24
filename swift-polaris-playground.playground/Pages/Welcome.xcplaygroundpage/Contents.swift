@@ -21,10 +21,10 @@
  
  ## A Quick Note
  
- This Playground works best with an internet connection, as it needs to connect to the Go-Polaris RPC JSON API. However, if one wishes to operate without an internet connection, simply run the run_polaris.sh (runs a local private offline Polaris network) file in Resources/ (`chmod +x Resources/run_polaris.sh && Resources/run_polaris.sh`). Furthermore, to use an offline connection, set the following variable to true.
+ This Playground works best with an internet connection, as it needs to connect to the Go-Polaris RPC JSON API. However, if one wishes to operate without an internet connection, simply run the run_polaris.sh (runs a local private offline Polaris network) file in Resources/ (`chmod +x Resources/run_polaris.sh && Resources/run_polaris.sh`). Furthermore, to use an offline connection, set the following variable to true in all pages.
 */
 
-API.Offline = false // Set to true for offline capability
+API.Offline = true // Set to true for offline capability
 
 /*:
  ## Getting Started
