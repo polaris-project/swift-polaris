@@ -9,7 +9,7 @@ public class AccountsAPI {
         URI = "\(apiURI)/twirp/accounts.Accounts" // Set API URI
     }
     
-    // NewAccount initializes a new account via the provieded API lookup URI.
+    // NewAccount initializes a new account via the provided API lookup URI.
     public func NewAccount() -> ([String: Any]?, Error?) {
         return Requests.MakeRequest(requestURI: "\(URI)/NewAccount", requestContents: [:]) // Return response
     }

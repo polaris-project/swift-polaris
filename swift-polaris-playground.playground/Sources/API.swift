@@ -6,6 +6,7 @@ public class API {
     
     public var Accounts: AccountsAPI // Accounts API instance
     public var Transaction: TransactionAPI // Transaction API instance
+    public var Dag: DagAPI // Dag API instance
     
     // init initializes a new API instance with the given api URI.
     public init(apiURI: String) {
@@ -13,5 +14,6 @@ public class API {
         
         Accounts = AccountsAPI(apiURI: apiURI) // Initialize accounts API
         Transaction = TransactionAPI(apiURI: apiURI) // Initialize transaction API
+        Dag = DagAPI(apiURI: apiURI) // Initialize dag API
     }
 }
