@@ -32,3 +32,9 @@ baseView.Say(s: "💸 found genesis balance: \(genesisBalance)") // Display foun
 
 PlaygroundPage.current.liveView = baseView // Set live view
 PlaygroundPage.current.needsIndefiniteExecution = true // Keep
+
+/*:
+ ## That's All!
+ 
+ Thanks for checking out my playground! Once again, feel free to play around with the Go-Polaris terminal (go-polaris --terminal), or the Swift-Polaris API. And, on that note, check out the [Go Polaris implementation repository](https://github.com/polaris-project/go-polaris) for further updates from myself regarding the protocol.
+*/
