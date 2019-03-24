@@ -7,9 +7,10 @@ class Requests: NSObject, URLSessionDelegate {
         let jsonData = try? JSONSerialization.data(withJSONObject: requestContents) // Get JSON representation
         
         var request = URLRequest(url: URL(string: requestURI)!) // Craft request
+
         request.httpMethod = "post" // Set HTTP method
-        
         request.httpBody = jsonData // Set request body
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type") // Set content type
         
         var responseJSON: [String: Any]? = nil // Init response buffer
         
