@@ -23,7 +23,7 @@ public class TransactionAPI {
      - gasLimit: maximum gas willing to spend
      - gasPrice: price per gas unit
     */
-    public func NewTransaction(nonce: uint64, amount: Float64, sender: String, recipient: String, parentTransactions: [String], gasLimit: uint64, gasPrice: Int64, payload: String) -> ([String: Any]?, Error?) {
+    public func NewTransaction(nonce: UInt64, amount: Float64, sender: String, recipient: String, parentTransactions: [String], gasLimit: UInt64, gasPrice: Int64, payload: String) -> ([String: Any]?, Error?) {
         let requestContents: [String: Any] = ["nonce": nonce, "amount": Data("\(amount)".utf8).base64EncodedString(), "address": sender, "address2": recipient, "transactionHash": parentTransactions, "gasLimit": gasLimit, "gasPrice": gasPrice, "payload": Data(payload.utf8).base64EncodedString()] // Initialize request
         
         return Requests.MakeRequest(requestURI: "\(URI)/NewTransaction", requestContents: requestContents) // Return response

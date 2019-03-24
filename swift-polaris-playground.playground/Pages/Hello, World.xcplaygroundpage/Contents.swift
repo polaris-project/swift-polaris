@@ -6,10 +6,12 @@
 */
 
 import Foundation
-import Cocoa
+import UIKit
 import PlaygroundSupport
 
 var api: API // Init API instance buffer
+
+API.Offline = API.Offline // Just a reminder to set to true for offline capability (make sure to run run_polaris.sh [node needs to be up!])
 
 if API.Offline { // Check is offline
     api = API(apiURI: "https://localhost:8000") // Initialize API instance
@@ -39,9 +41,9 @@ print("Created new account successfully! Here's your address: \(newAccountAddres
 */
 
 let baseView = DemoView(frame: CGRect(x: 0, y: 0, width: 500, height: 500)) // Placeholder to present address
-baseView.Say(s: "test")
+baseView.Say(s: "👏 Here's Your Address: \(String(newAccountAddress.prefix(16)) + "...")") // Set text to addr
 
 PlaygroundPage.current.liveView = baseView // Set live view
 PlaygroundPage.current.needsIndefiniteExecution = true // Keep open
 
-//: [Next](@next)
+//: Read to [make your first transaction?](Transaction)
