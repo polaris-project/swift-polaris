@@ -43,15 +43,15 @@ var message = "your message" // Try changing
 let baseView = DemoView(frame: CGRect(x: 0, y: 0, width: 500, height: 500)) // Bg
 
 if message == "your message" { // Check still default message
-    baseView.Say(s: "Hint: change the message variable!") // Log should try changing message
+    baseView.Say(s: "Hint: change the message variable (line 41)!") // Log should try changing message
+} else {
+    var transactionHash = api.Transaction.NewTransaction(nonce: 0, amount: 0, sender: newAccountAddress, recipient: destination, parentTransactions: [lastTransactionHash], gasLimit: 0, gasPrice: 0, payload: message).0!["message"] as! String // Initialize transaction
+    
+    transactionHash = api.Transaction.SignTransaction(transactionHash: transactionHash).0!["message"] as! String // Sign transaction
+    api.Transaction.Publish(transactionHash: transactionHash) // Publish
+    
+    baseView.Say(s: "😼🎉 transaction \(String(transactionHash.prefix(8)) + "...") published!") // Log publish!
 }
-
-var transactionHash = api.Transaction.NewTransaction(nonce: 0, amount: 0, sender: newAccountAddress, recipient: destination, parentTransactions: [lastTransactionHash], gasLimit: 0, gasPrice: 0, payload: message).0!["message"] as! String // Initialize transaction
-
-transactionHash = api.Transaction.SignTransaction(transactionHash: transactionHash).0!["message"] as! String // Sign transaction
-api.Transaction.Publish(transactionHash: transactionHash) // Publish
-
-baseView.Say(s: "😼🎉 transaction \(String(transactionHash.prefix(8)) + "...") published!") // Log publish!
 
 PlaygroundPage.current.liveView = baseView // Set live view
 PlaygroundPage.current.needsIndefiniteExecution = true // Keep open
