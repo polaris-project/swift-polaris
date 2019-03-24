@@ -16,7 +16,7 @@ public class AccountsAPI {
     
     // GetAllAccounts attempts to fetch the list of working accounts.
     public func GetAllAccounts() -> ([String: Any]?, Error?) {
-        return Requests.MakeRequest(requestURI: "\(URI)/NewAccount", requestContents: [:]) // Return response
+        return Requests.MakeRequest(requestURI: "\(URI)/GetAllAccounts", requestContents: [:]) // Return response
     }
     
     // AccountFromKey attempts to derive an account from a given private key
