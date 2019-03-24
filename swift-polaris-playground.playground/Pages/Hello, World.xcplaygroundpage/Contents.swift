@@ -46,4 +46,4 @@ baseView.Say(s: "👏 Here's Your Address: \(String(newAccountAddress.prefix(16)
 PlaygroundPage.current.liveView = baseView // Set live view
 PlaygroundPage.current.needsIndefiniteExecution = true // Keep open
 
-//: Read to [make your first transaction?](Transaction)
+//: Read to [make your first transaction?](Publishing%20Transactions)

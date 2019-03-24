@@ -26,10 +26,10 @@ if API.Offline { // Check is offline
 
 /*:
  * Experiment:
- Try creating a new transaction via the interface in the assistant view.
+ Try creating a new transaction via the parameters below.
  
     - Set a message in the variable below (everyone connected to the network will see it [if on public net])!
-    - Set a new destination address
+    - Set a new destination address (or just leave it [sends to your address by default])
 */
 
 let newAccountAddress = api.Accounts.NewAccount().0!["message"] as! String // Initialize new account
@@ -53,6 +53,18 @@ if message == "your message" { // Check still default message
     baseView.Say(s: "😼🎉 transaction \(String(transactionHash.prefix(8)) + "...") published!") // Log publish!
 }
 
+/*:
+ * Experiment:
+ Once you see a "transaction published!" message in the assistant, check the terminal you're running go-polaris in (if you're running offline, of course)!
+    - Notice the different types of logs relating to the hash in the assistant editor
+    - If you're connected to the public network, you might notice other peers requesting for your new transaction's contents! 👀
+*/
+
 PlaygroundPage.current.liveView = baseView // Set live view
 PlaygroundPage.current.needsIndefiniteExecution = true // Keep open
 
+/*:
+ ## Another Excercise
+ 
+ Now that you've mastered creating, signing, and publishing transactions, let's try exploring the DAG. If you're on a private network, you'll likely only have two transactions in the dag, but on a public network, all kinds of information can be found on the DAG (including messages from other people). Learn how the Swift-Polaris DAG API lets users [explore the Polaris ledger](Exploring%20the%20Dag).
+*/

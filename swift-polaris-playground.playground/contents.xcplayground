@@ -3,6 +3,7 @@
     <pages>
         <page name='Welcome'/>
         <page name='Hello, World'/>
-        <page name='Transaction'/>
+        <page name='Publishing Transactions'/>
+        <page name='Exploring the Dag'/>
     </pages>
 </playground>
